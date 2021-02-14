@@ -4,9 +4,10 @@ var addList = [];
 window.addEventListener("DOMContentLoaded", () => {
   if (locStor.getItem("items") == null) {
     pullFetch();
+  }
+  else{
     createAndPutItems();
   }
-  createAndPutItems()
 });
 
 /**
@@ -16,6 +17,7 @@ async function pullFetch() {
   const response = await fetch("https://fakestoreapi.com/products");
   const json = await response.json();
   locStor.setItem("store", JSON.stringify(json));
+  await createAndPutItems();
 }
 
 /**
