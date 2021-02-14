@@ -23,7 +23,7 @@ async function pullFetch() {
  */
 async function createAndPutItems() {
   // get the items in the store 
-  var stores= JSON.parse(locStor.getItem("store"));
+  var stores = JSON.parse(locStor.getItem("store"));
   var productList = document.getElementById("product-list");
 
   // if cart already exists
@@ -52,9 +52,9 @@ async function createAndPutItems() {
     //if the list has current item
     if (addList.includes(stores[i].id)) {
       added = "Remove from Cart";
-    //if the list doesn't have current item 
+      //if the list doesn't have current item 
     } else {
-      added =  "Add to Cart";
+      added = "Add to Cart";
     }
     //create the item element
     proItem = new ProductItem(id, imgSrc, title, price, added);

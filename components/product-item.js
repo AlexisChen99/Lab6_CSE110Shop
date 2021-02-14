@@ -11,15 +11,16 @@ class ProductItem extends HTMLElement {
     name.setAttribute("class", "title");
     name.innerHTML = title;
 
-    //creat the image of the product
+    //create the image of the product
     var image = document.createElement("img");
     image.setAttribute("width", 200);
     image.setAttribute("alt", title);
     image.setAttribute("src", imgSrc);
 
-    //creat the price of the product
+    //create the price of the product
     var price = document.createElement("p");
     price.setAttribute("class", "price");
+    // Append $ sign to item price
     price.innerHTML = "$" + itemPrice;
 
     //create the button of the product 
@@ -68,7 +69,6 @@ class ProductItem extends HTMLElement {
     //append list and style to the root 
     shadowRoot.appendChild(list);
     shadowRoot.appendChild(style);
-
 
     //css style
     style.textContent = `
